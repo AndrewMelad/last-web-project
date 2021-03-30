@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&display=swap');
+body
+{
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    background-color: black;
+    font-family: 'Lobster', cursive !important;
+
+    
+}
+.newBackGround
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url("6.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hidden{opacity: 0; }
+.list-load
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%) ;
+    list-style: none; 
+    font-size: 100px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;    
+}
+.list-load li
+{
+    letter-spacing: 15px;
+    color: #484848;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: animat linear 1.4s infinite ; 
+}
+@keyframes animat
+{
+    0%
+    {   
+        color: #484848;
+        text-shadow: 0px;
+    }
+    90%
+    {   
+        color: #484848;
+        text-shadow: 0px;
+    }
+    100%
+    {   
+        color: #484848;
+        text-shadow: 0px 0px 7px #fff900 ,0px 0px 50px #fffc60  ;
+    }
+}
+ul li:nth-child(1)
+{
+    animation-delay: 0.2s;
+}
+ul li:nth-child(2)
+{
+    animation-delay: 0.4s;
+}
+ul li:nth-child(3)
+{
+    animation-delay: 0.6s;
+}
+ul li:nth-child(4)
+{
+    animation-delay: 0.8s;
+}
+ul li:nth-child(5)
+{
+    animation-delay: 1s;
+}
+ul li:nth-child(6)
+{
+    animation-delay: 1.2s;
+}
+ul li:nth-child(7)
+{
+    animation-delay: 1.4s;
+}
+.card
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: translate(-50%,-50%) perspective(2000px);
+    box-shadow: 300px 0px 50px rgb(0, 0, 0,.5) inset,0px 20px 100px rgb(0, 0, 0,.5) ;
+    background-color: #fff;
+    transition: ease-in-out 1s  ;
+    opacity: 0;
+
+}/*
+.card:hover
+{
+    transform: translate(-50%,-50%) perspective(2000px) rotate(-10deg);
+    box-shadow: 0px 20px 50px rgb(0, 0, 0,.5) inset,0px 10px 100px rgb(0, 0, 0,.5) ;
+}*/
+.card::before
+{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    width: 5px;
+    height: 100%;
+    transform-origin: bottom;
+    transform: skewY(-45deg);
+}
+.card::after
+{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -5px;
+    width: 5px;
+    height: 100%;
+
+    transform-origin: left;
+    transform: skewY(-45deg);
+}
+.card .image
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: 1s;
+    transform-origin: left;
+}
+/*.card:hover .image
+{
+    transform: rotateY(-135deg);
+}
+*/
+.card .details
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 20px;
+    z-index: -1;
+    margin: 90px auto;
+    box-sizing: border-box;
+    font-size: 29px;
+    color: red;
+    background-image: "2.jpg";
+    line-height:40px;
+}
+/*******************************************************************/
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+
