@@ -4,21 +4,22 @@ var paper=document.getElementById("details");
 var parent=document.getElementById("parent");
 var image=document.getElementById("img");
  i=0;
-//  var sound      = document.createElement('audio');
-//  sound.id       = 'audio-player';
-//  sound.controls = 'controls';
-//  sound.src      = 'happy.mp3';
-//  sound.type     = 'audio/mpeg';
-//  document.getElementById('body').appendChild(sound);
-//  sound.load()
-//  sound.play();
+
 var sound      = document.createElement('audio');
 sound.id       = 'audio-player';
 sound.type     = 'audio/mpeg';
 sound.src      = 'happy.mp3';
 sound.controls = 'controls';
 sound.loop=true;
-card.addEventListener("click", playAudio);
+
+    setInterval(function()
+    { 
+        "use strict";
+    list.classList.add("hidden");
+    document.body.style.backgroundColor="transparent "; //default value  background color
+    document.body.classList.add("newBackGround");
+    card.style.opacity="1";
+    card.addEventListener("click", playAudio);
 function playAudio() {
     image.style.transform="rotateY(-135deg)";
     this.style.transform="translate(-50%,-50%) perspective(2000px) rotate(-10deg)";
@@ -38,16 +39,7 @@ function playAudio() {
     this.removeEventListener("click", closeAudio);
     this.addEventListener("click", playAudio);
   }
-    setInterval(function()
-    { 
-        "use strict";
-    list.classList.add("hidden");
-    document.body.style.backgroundColor="transparent "; //default value  background color
-    document.body.classList.add("newBackGround");
-    card.style.opacity="1";
-    
-     }, 5000);
-card.addEventListener("click",typeWritten);
+  card.addEventListener("click",typeWritten);
 function typeWritten() {$(function (){
   var typed =new Typed('.details', {
 
@@ -59,9 +51,11 @@ function typeWritten() {$(function (){
       loop:true,
       fadeOut: true,
       backDelay: 1000,
-      startDelay: 1000,
+      startDelay: 300,
   });
 })
 
 this.removeEventListener("click",typeWritten);
 }
+     }, 5000);
+
