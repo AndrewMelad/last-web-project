@@ -47,17 +47,21 @@ function playAudio() {
     card.style.opacity="1";
     
      }, 5000);
-$(function (){
-    var typed =new Typed('.details', {
+card.addEventListener("click",typeWritten);
+function typeWritten() {$(function (){
+  var typed =new Typed('.details', {
 
-        strings: ['3o2bal el mellion ya sa7by 😎 agda3 future web developer','Kol sanaahhh wenty tayba ya Maria 😍🔥',
-        
-             
-        ],
-        typeSpeed: 200,
-        loop:true,
-        fadeOut: true,
-        backDelay: 1000,
-        startDelay: 3000,
-    });
-});
+      strings: ['3o2bal el mellion ya sa7by 😎 agda3 future web developer','Kol sanaahhh wenty tayba ya Maria 😍🔥',
+      
+           
+      ],
+      typeSpeed: 200,
+      loop:true,
+      fadeOut: true,
+      backDelay: 1000,
+      startDelay: 1000,
+  });
+})
+
+this.removeEventListener("click",typeWritten);
+}
