@@ -1,3 +1,4 @@
+var flag = true;
 var list = document.getElementById("list");
 var card=document.getElementById("card");
 var paper=document.getElementById("details");
@@ -24,8 +25,11 @@ function playAudio() {
     image.style.transform="rotateY(-135deg)";
     this.style.transform="translate(-50%,-50%) perspective(2000px) rotate(-10deg)";
     this.style.boxShadow="0px 20px 50px rgb(0, 0, 0,.5) inset,0px 10px 100px rgb(0, 0, 0,.5)";
-    sound.play(); 
-
+    sound.play();
+    if(flag){
+      typeWritten();
+    flag = false;
+    }
     this.removeEventListener("click", playAudio);
     this.addEventListener("click", closeAudio);
   }
@@ -39,23 +43,25 @@ function playAudio() {
     this.removeEventListener("click", closeAudio);
     this.addEventListener("click", playAudio);
   }
-  card.addEventListener("click",typeWritten);
-function typeWritten() {$(function (){
-  var typed =new Typed('.details', {
+  //card.addEventListener("click",typeWritten);
 
-      strings: ['3o2bal el mellion ya sa7by 😎 agda3 future web developer','Kol sanaahhh wenty tayba ya Maria 😍🔥',
-      
-           
-      ],
-      typeSpeed: 200,
-      loop:true,
-      fadeOut: true,
-      backDelay: 1000,
-      startDelay: 300,
-  });
-})
-
-this.removeEventListener("click",typeWritten);
-}
      }, 5000);
 
+     function typeWritten() {$(function (){
+      var typed =new Typed('.details', {
+    
+          strings: ['3o2bal el mellion ya sa7by 😎 agda3 future web developer','Kol sanaahhh wenty tayba ya Maria 😍🔥',
+          
+               
+          ],
+          typeSpeed: 200,
+          loop:true,
+          fadeOut: true,
+          backDelay: 1000,
+          startDelay: 300,
+          showCursor: false,
+      });
+    })
+    
+    //this.removeEventListener("click",typeWritten);
+    }
